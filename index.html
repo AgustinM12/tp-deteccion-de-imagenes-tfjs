@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.0.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <main class="bg-blue-200 min-h-screen">
+
+        <h1 class="font-bold text-center text-xl">Modelo de deteccion de imagenes</h1>
+        <input type="file" id="input">
+
+        <div class="flex flex-col items-center justify-center">
+
+            <img id="img" class="max-w-[600px] max-h-[400px] p-10">
+
+            <button id="button" disabled
+                class="p-1 bg-green-400 rounded-md hover:bg-green-600 transition-all duration-300 border-2 border-white disabled:bg-gray-600 disabled:text-white hover:scale-110 flex">
+                ¿Qué es esta imagen?
+            </button>
+        </div>
+
+
+        <div id="divResultados" class="hidden flex flex-col justify-center items-center py-5">
+            <p id="resultado" class="font-semibold text-green-500">Esta imagen es un: </p> 
+
+            <p class="font-semibold">O tambien puede ser:</p>
+
+            <ul id="otros" class="text-red-500">
+
+            </ul>
+        </div>
+        <script src="script.js"></script>
+    </main>
+</body>
+
+</html>

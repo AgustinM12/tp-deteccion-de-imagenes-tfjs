@@ -19,6 +19,9 @@ function loadModelAndClassify() {
     })
 
     button.addEventListener("click", () => {
+        otros.innerHTML = ""
+        resultado.innerText = ""
+        divResultados.classList.add("hidden")
         // Cambiar el contenido del boton
         button.innerHTML = `<svg class="mr-3 h-5 w-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -28,6 +31,7 @@ function loadModelAndClassify() {
 
         // Clasificar la imagen una vez cargada
         mobilenet.load().then(model => {
+           
             model.classify(imgElement).then(predictions => {
                 divResultados.classList.remove("hidden")
                 console.log(predictions);
